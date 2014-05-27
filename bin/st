@@ -1,0 +1,8 @@
+#!/bin/bash
+# A helper script for running syncthing on Debian (Wheezy).  I wrote this
+# script because start-stop-daemon was not working very well when invoking
+# /bin/bash -c directly.
+
+STBIN=/usr/local/bin/syncthing
+
+STNORESTART=1 $STBIN 2>&1 | logger -t syncthing
